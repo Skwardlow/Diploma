@@ -10,7 +10,6 @@ public class WebController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        log.info("Someone entered index page");
         return "index";
     }
 
