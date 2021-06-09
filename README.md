@@ -2,7 +2,6 @@
 
 # InstaBotDetector
 
-# InstaFakeDetector 
 ##### This service is intended to help in determining whether the profile of the social network Instagram belongs to the class of bots. Determination of belonging is based on a neural network specially trained on a dataset of bots accounts, that allows it make a decision.
  1. It's simple. Start the service-side, predictor-side as above.
  2. Open the web application page.
