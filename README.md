@@ -14,13 +14,14 @@
 git clone https://github.com/Skwardlow/Diploma.git
 ```
 
-### Setting up Python dependencies
+### Setting up Python dependencies and env variables
 ```Bash
 cd BotApi/app/
 pip3 install virtualenv
 virtualenv venv
 source bin/venv/activate
 pip install -r requirements.txt
+export FLASK_APP=app
 ```
 
 #### You need a Gradle version 5.6 and higher!
