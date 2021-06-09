@@ -1,6 +1,13 @@
 [![Build Status](https://travis-ci.com/Skwardlow/Diploma.svg?token=KCkKDpGCxsPEM3xKfkFv&branch=master)](https://travis-ci.com/github/Skwardlow/Diploma)
 
-# InstaFakeDetector
+# InstaBotDetector
+
+# InstaFakeDetector 
+##### This service is intended to help in determining whether the profile of the social network Instagram belongs to the class of bots. Determination of belonging is based on a neural network specially trained on a dataset of bots accounts, that allows it make a decision.
+ 1. It's simple. Start the service-side, predictor-side as above.
+ 2. Open the web application page.
+ 3. You will be presented with one input field and a "Check" button, by clicking on which, after a short period of time, you will receive the result.
+ 4. Enter the name of your Instagram account, click the button and get the result!
 
 # Project Download
 ```Bash
@@ -15,6 +22,8 @@ virtualenv venv
 source bin/venv/activate
 pip install -r requirements.txt
 ```
+
+#### You need a Gradle version 5.6 and higher!
 
 # Program assembly
 
@@ -32,16 +41,8 @@ flask run
 ```Groovy
 gradle bootRun
 ```
-#### Gradle version 5.6 and higher
 
-# InstaFakeDetector 
-##### This service is intended to help in determining whether the profile of the social network Instagram belongs to the class of bots. Determination of belonging is based on a neural network specially trained on a dataset of fake accounts, which makes its decision.
- 1. It's simple. Start the service-side, predictor-side as above.
- 2. Open the web application page.
- 3. You will be presented with one input field and a "Check" button, by clicking on which, after a short period of time, you will receive the result.
- 4. Enter the name of your Instagram account, click the button and get the result!
-
-### [Link to the project](https://instafakepredictor.herokuapp.com/)
+### [Link to the project](https://instabotdetector.herokuapp.com/)
 
 ##### Used technologies 
 ![Image](https://lilly021.com/wp-content/uploads/2019/07/springBoot_featured_image.png)
