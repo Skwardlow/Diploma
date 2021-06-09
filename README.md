@@ -47,10 +47,11 @@ gradle bootRun
 ![Image](https://lilly021.com/wp-content/uploads/2019/07/springBoot_featured_image.png)
 ![Image](https://i.ytimg.com/vi/ClM3T7uozEo/maxresdefault.jpg)
 ![Image](https://pbs.twimg.com/media/Ch-UM1wWEAISZac.jpg)
+![Image](https://static.tildacdn.com/tild3830-6137-4139-b266-323735306638/IG-Glyph-Icon-hero.png)
+![Image](https://neurohive.io/wp-content/uploads/2019/06/1200px-Scikit_learn_logo_small.svg.png)
 ![Image](https://linux-notes.org/wp-content/uploads/2019/06/Ustanovka-heroku-v-UnixLinux-660x320.jpg)
 ![Image](http://www.johncanessa.com/wp-content/uploads/2017/03/rest_api_logo.jpg)
-![Image](https://static.tildacdn.com/tild3830-6137-4139-b266-323735306638/IG-Glyph-Icon-hero.png) https://neurohive.io/wp-content/uploads/2019/06/1200px-Scikit_learn_logo_small.svg.png
-![Image](https://neurohive.io/wp-content/uploads/2019/06/1200px-Scikit_learn_logo_small.svg.png)
+
 
 
 ## The project was made by:
