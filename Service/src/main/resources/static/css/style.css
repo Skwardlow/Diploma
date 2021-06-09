@@ -3,7 +3,7 @@ body {
     font-family : 'Hind', sans-serif;
     font-size   : 15px;
     line-height : 1.8em;
-    color       : #989898;
+    color       : #4e4e4e;
     font-weight : 300;
     background  : #f8f8f8;
 }
@@ -334,3 +334,4 @@ button:focus,
     top        : 0;
     z-index    : 9999;
 }
+

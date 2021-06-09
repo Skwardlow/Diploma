@@ -10,6 +10,7 @@ public class UserUtils {
         DecimalFormat df = new DecimalFormat("#.##");
         int a = data.length();
         int b = data.replaceAll("\\D", "").length();
+        if ( b==0 ) {return 0.0f;}
         return Float.valueOf(df.format((float)b/a));
     }
 

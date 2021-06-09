@@ -6,7 +6,15 @@ import seaborn as sns
 from sklearn.datasets import load_files
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import confusion_matrix
-
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.svm import SVC
+from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
 
 
 def load_train_data():
@@ -125,17 +133,14 @@ unique, freq = np.unique(y_data, return_counts=True)
 for i, j in zip(unique, freq):
     print("Label: ", i, ", Frequency: ", j)
 
-from sklearn.model_selection import train_test_split
+# ------------------------------------------------------------------
 
 X_train, X_test, y_train, y_test = train_test_split(X_data, y_data, test_size=0.2, random_state=37)
 
 print(X_train.shape)
 print(y_train.shape)
 
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.svm import SVC
-from sklearn.naive_bayes import GaussianNB
+# -------------------------------------------------------------------------------------
 
 model_list = [LogisticRegression(max_iter=600),
               SVC(),
@@ -163,7 +168,7 @@ for val, train, model in models_score:
 
     print("-------------------------------------")
 
-from sklearn.model_selection import GridSearchCV
+# ---------------------------------------------------------------
 import os
 
 # if run on own computer
@@ -195,9 +200,7 @@ grid2.fit(X_train, y_train)
 
 print_grid_search_result(grid2)
 
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-
+# -----------------------------------------------------------------------------
 pipeline = Pipeline([('preprocessing', StandardScaler()), ('classifier', grid1.best_estimator_)])
 pipeline.fit(X_train, y_train)
 
@@ -207,7 +210,7 @@ X_final, y_final = load_test_data()
 
 print("Test score: {:.3f}".format(pipeline.score(X_final, y_final)))
 
-from sklearn.metrics import classification_report
+# ----------------------------------------------------------------------
 y_pred = pipeline.predict(X_final)
 print(classification_report(y_final, y_pred, target_names=["genuine", "fake"]))
 

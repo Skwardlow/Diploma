@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class DefaultUserDataHandler {
 
     public static ExternalUser getUserDataWA(String userName){
-        RawRequestData rawUserData = RequestHandlerWA.getAllUserInfoWA("nasa");
+        RawRequestData rawUserData = RequestHandlerWA.getAllUserInfoWA(userName);
         ExternalUser userObj = new ExternalUser(rawUserData.getGraphql().getUser());
         return userObj;
     }

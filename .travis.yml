@@ -1,0 +1,24 @@
+jobs:
+  include:
+    - language: python
+      python: 3.8
+      before_script:
+        - cd BotApi/app
+      install:
+        - pip install -r BotApi/app/requirements.txt
+      script:
+        - python3 -m pytest -v tests/test.py
+
+    - language: java
+      jdk:
+        - openjdk11
+      os: linux
+      dist: xenial
+      before_script:
+        - cd Service/
+      script:
+        - gradle build -x test
+
+notifications:
+  email:
+    - gorskovdmitry@gmail.com
