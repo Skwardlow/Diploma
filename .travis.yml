@@ -14,6 +14,11 @@ jobs:
         - openjdk11
       os: linux
       dist: xenial
+      before_install:
+        - wget https://services.gradle.org/distributions/gradle-7.0.2-bin.zip
+        - unzip -qq gradle-7.0.2-bin.zip
+        - export GRADLE_HOME=$PWD/gradle-7.0.2
+        - export PATH=$GRADLE_HOME/bin:$PATH
       before_script:
         - cd Service/
       script:
