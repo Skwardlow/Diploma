@@ -14,6 +14,8 @@
 git clone https://github.com/Skwardlow/Diploma.git
 ```
 
+# Program assembly
+
 ### Setting up Python dependencies and env variables
 ```Bash
 cd BotApi/app/
@@ -25,8 +27,6 @@ export FLASK_APP=app
 ```
 
 #### You need a Gradle version 5.6 and higher!
-
-# Program assembly
 
 ##### Service-side
 ```Groovy
