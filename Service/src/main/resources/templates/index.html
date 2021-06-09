@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NeuralInsta</title>
+
+    <link href="img/favicon.png" rel=icon>
+
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/slick/slick.css">
+    <link rel="stylesheet" href="js/slick/slick-theme.css">
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="main-wrapper">
+
+    <div id="preloader">
+        <div id="status">
+            <div class="status-mes"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <header class="header">
+
+        <footer class="cvcontainer">
+            <div class="copyright-section">
+                <div class="col-md-9">
+                    <div class="name-wrapper">
+                        <h1 class="name"><a href="https://github.com/Skwardlow/Diploma">GitHub</a></h1>
+                    </div>
+            </div>
+        </footer>
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-img">
+                        <img src="img/img-profile.jpg" class="img-responsive" alt=""/>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="name-wrapper">
+                        <h1 class="name">InstaFakePredictor</h1>
+                    </div>
+                    <div class="name-wrapper">
+                        <span>Сервис по распознаванию ботов в социальной сети Instagram</span>
+                    </div>
+                    <p>
+                        Приветствую!
+                        Данный сервис предназначен для анализа аккаунта в социальной сети Instagram на принадлежность
+                        настоящему человеку или же боту. Для начала работы - введите в поле ниже адрес профиля, который
+                        вы бы хотели проверить и нажмите соответствующую кнопку.
+                    </p>
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-offset-3">
+                                <br>
+                                <input type="button" value="Проверить!" name="parse" id="parse">&nbsp;&nbsp;
+                                <input type="text" name="input" placeholder="Имя пользователя" id="username">
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <div id="loading">
+                                    <img src="img/ajax-loader.gif"/><span>Подождите</span>
+                                </div>
+                                <div class="name-wrapper" name='result' id="result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-offset-10">
+                            <div class="personal-details">
+                                <strong>0.984</strong>
+                                <small>Точность</small>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-10">
+                            <div class="personal-details">
+                                <strong>07.06.2021</strong>
+                                <small>Дата обновления</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+<!--                    <ul class="social-icon">-->
+<!--                        <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Skwardlow"><img src="img/gh.png" class="img-responsive" alt=""/></a></li>-->
+<!--                        <li><a target="_blank" rel="noopener noreferrer" href="https://codeforces.com/profile/Skwardlow"><img src="img/cf.png" class="img-responsive" alt=""/></a></li>-->
+<!--                        <li><a target="_blank" rel="noopener noreferrer" href="https://vk.com/dimchos"><img src="img/vk.svg" class="img-responsive" alt=""/></a></li>-->
+<!--                        <li><a><img src="img/tg.png" class="img-responsive" alt=""/></a></li>-->
+<!--                        <li class="pupper"> - @skwardlow </li>-->
+<!--                        <li><a><img src="img/gm.png" class="img-responsive" alt=""/></a></li>-->
+<!--                        <li class="pupper"> - gorskovdmitry@gmail.com </li>-->
+<!--                    </ul>-->
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <footer class="footer">
+        <div class="copyright-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11">
+                        <div class="slider slide">
+                            <div id="sl0"> Пусто </div>
+                            <div id="sl1"> Пусто </div>
+                            <div id="sl2"> Пусто </div>
+                            <div id="sl3"> Пусто </div>
+                            <div id="sl4"> Пусто </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="copytext">&copy; Dmitry Gorskov Project, All rights reserved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/index.js"></script>
+
+<script src="js/slick/slick.js"></script>
+</body>
+</html>
