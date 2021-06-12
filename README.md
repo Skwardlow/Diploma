@@ -18,10 +18,10 @@ git clone https://github.com/Skwardlow/Diploma.git
 ### Setting up Python dependencies and env variables
 ```Bash
 cd BotApi/app/
-pip3 install virtualenv
+python3 -m venv venv
 virtualenv venv
 source bin/venv/activate
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 export FLASK_APP=app
 ```
 
@@ -33,16 +33,20 @@ gradle build -x test
 ```
 
 ##### Predictor-side
-```Bash
-flask run
-```
+ * Not neccessary
 
 # Program launch
+##### Service-side
 ```Groovy
 gradle bootRun
 ```
 
-### [Link to the project](https://instabotdetector.herokuapp.com/)
+##### Predictor-side
+```Bash
+flask run
+```
+
+### [Link to the project](https://instabotdetector.xyz/)
 
 ##### Used technologies 
 ![Image](https://lilly021.com/wp-content/uploads/2019/07/springBoot_featured_image.png)

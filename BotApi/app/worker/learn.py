@@ -1,9 +1,7 @@
 import joblib
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.datasets import load_files
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import confusion_matrix
 from sklearn.pipeline import Pipeline
@@ -18,12 +16,6 @@ from sklearn.model_selection import train_test_split
 
 
 def load_train_data():
-    ''' Load data from csv files, Train data
-        Splits data into X (feature matrix) and y (labels)
-
-        returns: X_train, y_train
-
-    '''
     train_data = pd.read_csv('../data/instagram-fake-spammer-genuine-accounts/train.csv', header=0)
 
     X_train = train_data.drop(columns='fake')
@@ -33,12 +25,6 @@ def load_train_data():
 
 
 def load_test_data():
-    ''' Load data from csv files, Train and Test data
-        Splits data into X (feature matrix) and y (labels)
-
-        returns: X_test, y_test
-
-    '''
     test_data = pd.read_csv('../data/instagram-fake-spammer-genuine-accounts/test.csv', header=0)
 
     X_test = test_data.drop(columns='fake')
@@ -48,18 +34,6 @@ def load_test_data():
 
 
 def get_classifier_cv_score(model, X, y, scoring='accuracy', cv=7):
-    '''Calculate train and validation score of classifier (model) using cross-validation
-
-
-        model (sklearn classifier): Classifier to train and evaluate
-        X (numpy.array or pandas.DataFrame): Feature matrix
-        y (numpy.array or pandas.Series): Target vector
-        scoring (str): a scoring string accepted by sklearn.metrics.cross_validate()
-        cv (int): number of cross-validation folds see sklearn.metrics.cross_validate()
-
-        returns: mean training score, mean validation score
-
-    '''
     scores = cross_validate(model, X, y, cv=cv, scoring=scoring, return_train_score=True)
     train_scores = scores['train_score']
     val_scores = scores['test_score']
@@ -71,16 +45,6 @@ def get_classifier_cv_score(model, X, y, scoring='accuracy', cv=7):
 
 
 def print_grid_search_result(grid_search):
-    '''Prints best parameters and mean training and validation scores of a grid search object.
-
-        grid_search (sklearn GridSearchCV): Fitted GridSearchCV object
-
-        scores are printed with 3 decimal places.
-
-    '''
-
-    # TODO: implement function body
-
     print(grid_search.best_params_)
 
     best_train = grid_search.cv_results_["mean_train_score"][grid_search.best_index_]
@@ -91,16 +55,6 @@ def print_grid_search_result(grid_search):
 
 
 def plot_confusion_matrix(y_actual, y_pred, labels, title=''):
-    '''Creates a heatmap plot of the confusion matrix.
-
-        y_actual (pandas.DataSeries or numpy.Array): Ground truth label vector
-        y_pred (pandas.DataSeries or numpy.Array): Predicted label vector
-        labels (list(str)): Class names used for plotting (ticklabels)
-        title (str): Plot title
-
-        uses sklearn.metrics.confusion_matrix
-
-    '''
     data = confusion_matrix(y_actual, y_pred)
     ax = sns.heatmap(data,
                      annot=True,
@@ -169,18 +123,11 @@ for val, train, model in models_score:
     print("-------------------------------------")
 
 # ---------------------------------------------------------------
-import os
-
-# if run on own computer
-# num_cpu = int(os.environ['NUMBER_OF_PROCESSORS'])
-
 model = RandomForestClassifier(random_state=55)
 
 parameters = {'n_estimators': [300, 500, 700, 1000],
               'max_depth': [7, 9, 11, 13]}
 
-# if run on own computer
-# grid1 = GridSearchCV(model, parameters, cv=7, scoring='average_precision', n_jobs=num_cpu, return_train_score=True)
 grid1 = GridSearchCV(model, parameters, cv=7, scoring='average_precision', return_train_score=True)
 
 grid1.fit(X_train, y_train)
@@ -192,8 +139,6 @@ model = GradientBoostingClassifier(max_depth=5, random_state=56)
 parameters = {'n_estimators': [50, 100, 200],
               'learning_rate': [0.001, 0.01, 0.1, 1.0, 10.0]}
 
-# if run on own computer
-# grid2 = GridSearchCV(model, parameters, cv=7, scoring='average_precision', n_jobs=num_cpu, return_train_score=True)
 grid2 = GridSearchCV(model, parameters, cv=7, scoring='average_precision', return_train_score=True)
 
 grid2.fit(X_train, y_train)
@@ -215,13 +160,13 @@ y_pred = pipeline.predict(X_final)
 print(classification_report(y_final, y_pred, target_names=["genuine", "fake"]))
 
 labels = ["genuine", "fake"]
-title = "Predicting Fake Instagram Account"
+title = "Predicting Fake Instagram Account confusion map"
 plot_confusion_matrix(y_final, y_pred, labels, title)
 
 data_corr = X_data.corr(method='pearson')
 ax = sns.heatmap(data_corr, vmin=-1, vmax=1, cmap='BrBG')
-ax.set_title("Correlation Heatmap Between Features")
+ax.set_title("Correlation Heatmap (covariation)")
+ax.figure.show()
 
 model.fit(X_train, y_train)
 joblib.dump(model, '../data/model.pkl')
-tst_mdl = joblib.load('../data/model.pkl')
