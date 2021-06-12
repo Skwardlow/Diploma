@@ -1,9 +1,7 @@
 import joblib
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.datasets import load_files
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import confusion_matrix
 from sklearn.pipeline import Pipeline
